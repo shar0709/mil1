@@ -1,1 +1,28 @@
-<h1>Hello World!</h1>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>퀴즈 1</title>
+</head>
+<body>
+  <h1>첫 번째 문제</h1>
+  <p>정답을 입력하세요:</p>
+  
+  <input type="text" id="answer" placeholder="정답 입력">
+  <button onclick="checkAnswer()">제출</button>
+  
+  <p id="result"></p>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      if (input === "정답") {  // 👉 여기에 원하는 정답을 넣으면 됨
+        document.getElementById("result").innerHTML = "🎉 정답입니다!";
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // 👉 정답 시 이동할 영상 URL
+      } else {
+        document.getElementById("result").innerHTML = "❌ 다시 시도해보세요.";
+      }
+    }
+  </script>
+</body>
+</html>
