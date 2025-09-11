@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>배</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-image: url('tong02.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding-top: 100px; /* 화면 위쪽에 여백 추가 */
+    }
+
+    .content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px; /* 기존 20px → 30px */
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .content h1 {
+      font-size: 28px; /* 제목 크기 확대 */
+    }
+
+    .content p {
+      font-size: 20px; /* 본문 글자 크기 확대 */
+      line-height: 1.5; /* 줄간격 확보 */
+    }
+
+    input, button {
+      font-size: 18px; /* 입력창/버튼 글자 크기 확대 */
+      padding: 15px 20px; /* 내부 여백 확대 */
+      border-radius: 8px;
+      margin: 10px;
+    }
+
+    /* 모바일 대응 */
+  @media (max-width: 768px) {
+    .content {
+      padding: 20px;
+    }
+
+    .content h1 {
+      font-size: 22px; /* 모바일에서 제목 크기 */
+    }
+
+    .content p {
+      font-size: 18px; /* 모바일에서 본문 크기 */
+    }
+
+    input, button {
+      font-size: 16px;
+      padding: 12px 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content h1 {
+      font-size: 20px;
+    }
+
+    .content p {
+      font-size: 16px;
+    }
+
+    input, button {
+      font-size: 14px;
+      padding: 10px 12px;
+    }
+  }
+  
+    img {
+      width: 60%;
+      max-width: 600px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 영상과 본문 사이 이미지 -->
+  <img src="tong3.png" alt="설명 이미지">
+
+  <div class="content">
+    <h1>단서3.배</h1>
+    <p>언덕 위에 배가 있다니! 정말 놀랍다!<br>이번 단서는 뭔가를 세어봐야 한다고 한다.<br>통영의 옛 이름과 관련이 있다는데...</p>
+    <input type="text" id="answer" placeholder="세번째 단서는 뭘까?">
+    <button onclick="checkAnswer()">제출</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const answer = document.getElementById('answer').value.trim();
+      if (answer === "1592") {
+        document.getElementById('result').textContent = "정답입니다! 영상으로 이동합니다.";
+        setTimeout(() => {
+          // 정답이면 유튜브 영상 페이지로 이동
+          window.location.href = "https://www.youtube.com/embed/bPFmdF1_2aU?autoplay=1&mute=1";
+        }, 2000); // 2초 후 이동
+      } else {
+        document.getElementById('result').textContent = "틀렸습니다!";
+      }
+    }
+  </script>
+</body>
+</html>
