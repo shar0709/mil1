@@ -7,21 +7,31 @@
     body {
       margin: 0;
       height: 100vh; /* 화면 전체 높이 */
-      background-image: url('milyang_bg.png'); /* 배경 이미지 파일 이름 */
-      background-size: cover;   /* 화면에 꽉 차게 */
-      background-position: center; /* 중앙 정렬 */
-      background-repeat: no-repeat; /* 반복 방지 */
+      background-image: url('milyang_bg.png'); /* 배경 이미지 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       font-family: Arial, sans-serif;
-      color: white; /* 글자색 */
+      color: white;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    iframe {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .content {
-      background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정 배경 */
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 20px;
       border-radius: 10px;
       display: inline-block;
-      margin-top: 100px;
     }
 
     input, button {
@@ -33,10 +43,20 @@
   </style>
 </head>
 <body>
+
+  <!-- 유튜브 영상 -->
+  <iframe 
+    src="https://www.youtube.com/embed/영상ID?autoplay=1&mute=1" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+
   <div class="content">
-    <h1>독립을 위한 여정에 참가하시겠습니까?</h1>
-    <p>편지에는 자신이 과거 일제강점기의 사람이라고 주장하는 사람이 조국의 독립을 위해 도움을 달라고 한다.</p>
-    <input type="text" id="answer" placeholder="정답을 입력하세요">
+    <h1>독립을 위한 첫번째 여정</h1>
+    <p>독립운동에 참가하기 위해서는 우선 영남 제일 누각의 파도를 막는 집에 있는 자신을 찾아오라고 한다. 자신을 찾기 위해서는 현판에 적혀있는 암호를 해독해서 숫자를 입력해야 한다. </p>
+    <input type="text" id="answer" placeholder="현판에 있는 숫자는 무엇일까?">
     <button onclick="checkAnswer()">제출</button>
     <p id="result"></p>
   </div>
@@ -44,7 +64,7 @@
   <script>
     function checkAnswer() {
       const answer = document.getElementById('answer').value.trim();
-      if (answer === "독립") {
+      if (answer === "4290") {
         document.getElementById('result').textContent = "정답입니다!";
       } else {
         document.getElementById('result').textContent = "틀렸습니다!";
