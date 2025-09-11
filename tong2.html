@@ -6,8 +6,8 @@
   <style>
     body {
       margin: 0;
-      height: 100vh; /* 화면 전체 높이 */
-      background-image: url('tong1.png'); /* 배경 이미지 */
+      height: 100vh;
+      background-image: url('tong02.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -17,6 +17,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      padding-top: 100px; /* 화면 위쪽에 여백 추가 */
     }
 
     .content {
@@ -92,7 +94,7 @@
 
   <div class="content">
     <h1>단서2.깃발</h1>
-    <p>깃발이 있는 장소는 서포루였다.<br>근처를 잘 살펴보면 단서를 찾을 수 있다고 한다.</p>
+    <p>깃발이 있는 장소는 서포루였다.<br>두번째 단서는 무엇일까? 근처를 잘 살펴보면 찾을 수 있다고 한다.</p>
     <input type="text" id="answer" placeholder="두번째 단서는 뭘까?">
     <button onclick="checkAnswer()">제출</button>
     <p id="result"></p>
