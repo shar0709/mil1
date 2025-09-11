@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>퀴즈 2</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <title>요원을 찾아 접선하라</title>
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; max-width: 560px; margin: 40px auto; padding: 0 16px; }
-    h1 { margin-bottom: 8px; }
-    .box { padding: 16px; border: 1px solid #ddd; border-radius: 12px; }
-    input { width: 100%; padding: 12px; font-size: 16px; box-sizing: border-box; margin: 8px 0; }
-    button { padding: 12px 16px; font-size: 16px; cursor: pointer; }
-    .msg { margin-top: 8px; min-height: 24px; }
+    body {
+      margin: 0;
+      height: 100vh; /* 화면 전체 높이 */
+      background-image: url('milyang_bg.png'); /* 배경 이미지 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    img {
+      width: 60%;
+      max-width: 600px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>요원을 찾아라</h1>
-  <p>장터에서 만난 요원이 암호를 요구한다. 암호는 무엇일까?</p>
 
-  <div class="box">
-    <input id="answer" type="text" placeholder="정답 입력" />
-    <button id="submitBtn">제출</button>
-    <div id="msg" class="msg"></div>
+  <!-- 영상과 본문 사이 이미지 -->
+  <img src="milyang01.png" alt="설명 이미지">
+
+  <div class="content">
+    <h1>요원을 찾아 접선하라</h1>
+    <p>요원과 만나기 위해서는 암호를 풀어야 한다.</p>
+    <input type="text" id="answer" placeholder="네 자리 숫자의 암호를 입력하시오">
+    <button onclick="checkAnswer()">제출</button>
+    <p id="result"></p>
   </div>
 
   <script>
-    // ✅ 이 부분만 바꾸면 됩니다
-    const CORRECT_ANSWER = "동문";  // 두 번째 문제의 정답
-    const VIDEO_URL = "https://www.youtube.com/watch?v=t2C3xtwJc_w"; // 두 번째 문제 맞췄을 때 보여줄 영상 URL
-
-    const norm = (s) => s.trim().toLowerCase().replace(/\s+/g, "");
-
     function checkAnswer() {
-      const input = document.getElementById("answer").value;
-      const msg = document.getElementById("msg");
-
-      if (norm(input) === norm(CORRECT_ANSWER)) {
-        msg.textContent = "🎉 정답입니다! 영상으로 이동합니다…";
-        setTimeout(() => { window.location.href = VIDEO_URL; }, 800);
+      const answer = document.getElementById('answer').value.trim();
+      if (answer === "1945") {
+        document.getElementById('result').textContent = "정답입니다! 영상으로 이동합니다.";
+        setTimeout(() => {
+          // 정답이면 유튜브 영상 페이지로 이동
+          window.location.href = "https://www.youtube.com/embed/bPFmdF1_2aU?autoplay=1&mute=1";
+        }, 2000); // 2초 후 이동
       } else {
-        msg.textContent = "❌ 오답입니다. 다시 시도해 보세요.";
+        document.getElementById('result').textContent = "틀렸습니다!";
       }
     }
-
-    document.getElementById("submitBtn").addEventListener("click", checkAnswer);
-    document.getElementById("answer").addEventListener("keydown", (e) => {
-      if (e.key === "Enter") checkAnswer();
-    });
   </script>
 </body>
 </html>
