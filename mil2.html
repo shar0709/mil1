@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>요원을 찾아 접선하라</title>
+  <title>장터에서 독립운동가를?</title>
   <style>
     body {
       margin: 0;
@@ -91,9 +91,10 @@
   <img src="milyang02.png" alt="설명 이미지">
 
   <div class="content">
-    <h1>요원을 찾아 접선하라</h1>
-    <p>요원과 만나기 위해서는 암호를 풀어야 한다.<br>네자리 숫자의 암호를 입력하자.</p>
-    <input type="text" id="answer" placeholder="암호를 말하시오">
+    <h1>장터에서 독립운동가를?</h1>
+    <p>다음 지령을 받기 위해서는 장터에서 독립운동가의 흔적을 찾아야 한다.<br>
+       올바른 장소를 찾아갔다면 다음 네자리 숫자의 암호를 알 수 있을것이다.</p>
+    <input type="text" id="answer" placeholder="암호를 입력하시오">
     <button onclick="checkAnswer()">제출</button>
     <p id="result"></p>
   </div>
@@ -102,10 +103,10 @@
     function checkAnswer() {
       const answer = document.getElementById('answer').value.trim();
       if (answer === "1945") {
-        document.getElementById('result').textContent = "정답입니다! 영상으로 이동합니다.";
+        document.getElementById('result').textContent = "정답입니다!";
         setTimeout(() => {
           // 정답이면 유튜브 영상 페이지로 이동
-          window.location.href = "https://www.youtube.com/embed/bPFmdF1_2aU?autoplay=1&mute=1";
+          window.location.href = "https://shar0709.github.io/mil1/mil21.html";
         }, 2000); // 2초 후 이동
       } else {
         document.getElementById('result').textContent = "틀렸습니다!";
