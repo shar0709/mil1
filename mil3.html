@@ -92,7 +92,7 @@
 
   <div class="content">
     <h1>요원이 말한 장소로 이동하자</h1>
-    <p>요원과 접선하기로 한 장소는 일본 경찰의 미행으로 노출되었다.<br>미행을 따돌리고 새로운 접선 장소로 이동해야 한다.<br>요원이 말한 장소는 어디일까?</p>
+    <p>요원의 부탁으로 일본 경찰의 미행을 피해 지령서를 운반해야 한다.<br>미행을 따돌리고 새로운 접선 장소로 이동하자.<br>요원이 말한 장소는 어디일까?</p>
     <input type="text" id="answer" placeholder="접선 장소는 어디?">
     <button onclick="checkAnswer()">제출</button>
     <p id="result"></p>
@@ -102,10 +102,10 @@
     function checkAnswer() {
       const answer = document.getElementById('answer').value.trim();
       if (answer === "달빛정원") {
-        document.getElementById('result').textContent = "정답입니다! 영상으로 이동합니다.";
+        document.getElementById('result').textContent = "정답입니다!";
         setTimeout(() => {
           // 정답이면 유튜브 영상 페이지로 이동
-          window.location.href = "https://www.youtube.com/embed/bPFmdF1_2aU?autoplay=1&mute=1";
+          window.location.href = "https://naver.me/GgBjOd2b";
         }, 2000); // 2초 후 이동
       } else {
         document.getElementById('result').textContent = "틀렸습니다!";
