@@ -7,7 +7,7 @@
     body {
       margin: 0;
       height: 100vh;
-      background-image: url('tong02.png');
+      background-image: url('tong12.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -108,14 +108,14 @@
   </style>
 </head>
 <body>
-  <iframe src="https://naver.me/xdjl9D2r" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe src="https://naver.me/IGZR5RPD" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   <!-- 영상과 본문 사이 이미지 -->
   <img src="tong7.png" alt="설명 이미지">
 
   <div class="content">
     <h1>단서6.책</h1>
-    <p>박경리 작가의 소설 김약국의 딸들<br>여기에 마지막 단서가 있다는데<br>숫자 사이에 있는 x는 무엇을 뜻하는 걸까?</p>
-    <input type="text" id="answer" placeholder="마지막 단서는?">
+    <p>마지막 장소에 도착했나요?<br>그럼 왼쪽에는 뭐가 있나요?<br>제대로 찾아갔다면 알 수 있을거예요.</p>
+    <input type="text" id="answer" placeholder="바다를 바라봤을때의 방향입니다.">
     <button onclick="checkAnswer()">제출</button>
     <p id="result"></p>
   </div>
@@ -124,10 +124,10 @@
     function checkAnswer() {
       const answer = document.getElementById('answer').value.trim();
       if (answer === "20x10") {
-        document.getElementById('result').textContent = "정답입니다! 영상으로 이동합니다.";
+        document.getElementById('result').textContent = "정답입니다!";
         setTimeout(() => {
           // 정답이면 유튜브 영상 페이지로 이동
-          window.location.href = "https://www.youtube.com/embed/bPFmdF1_2aU?autoplay=1&mute=1";
+          window.location.href = "https://shar0709.github.io/mil1/tong61.html";
         }, 2000); // 2초 후 이동
       } else {
         document.getElementById('result').textContent = "틀렸습니다!";
