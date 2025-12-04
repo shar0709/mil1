@@ -20,7 +20,27 @@
 
       padding-top: 100px; /* 화면 위쪽에 여백 추가 */
     }
+    iframe {
+      width: 90%;            /* 화면 거의 꽉 차게 */
+      max-width: 900px;      /* 너무 넓어지지 않도록 */
+      height: 500px;         /* 기본 높이 */
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
 
+    /* 모바일 대응 iframe */
+    @media (max-width: 768px) {
+      iframe {
+        height: 320px;       /* 태블릿/중형 화면 */
+      }
+    }
+
+    @media (max-width: 480px) {
+      iframe {
+        height: 220px;       /* 스마트폰 */
+      }
+    }
     .content {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 30px; /* 기존 20px → 30px */
