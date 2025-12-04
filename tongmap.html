@@ -17,68 +17,91 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-top: 100px;
+    }
 
-      padding-top: 100px; /* 화면 위쪽에 여백 추가 */
+    /* 🔥 반응형 iframe 스타일 */
+    iframe {
+      width: 90%;            /* 화면 거의 꽉 차게 */
+      max-width: 900px;      /* 너무 넓어지지 않도록 */
+      height: 500px;         /* 기본 높이 */
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* 모바일 대응 iframe */
+    @media (max-width: 768px) {
+      iframe {
+        height: 320px;       /* 태블릿/중형 화면 */
+      }
+    }
+
+    @media (max-width: 480px) {
+      iframe {
+        height: 220px;       /* 스마트폰 */
+      }
     }
 
     .content {
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 30px; /* 기존 20px → 30px */
+      padding: 30px;
       border-radius: 10px;
       display: inline-block;
+      max-width: 90%;   /* 모바일에서 자연스러운 폭 */
     }
 
     .content h1 {
-      font-size: 28px; /* 제목 크기 확대 */
+      font-size: 28px;
     }
 
     .content p {
-      font-size: 20px; /* 본문 글자 크기 확대 */
-      line-height: 1.5; /* 줄간격 확보 */
+      font-size: 20px;
+      line-height: 1.5;
     }
 
     input, button {
-      font-size: 18px; /* 입력창/버튼 글자 크기 확대 */
-      padding: 15px 20px; /* 내부 여백 확대 */
+      font-size: 18px;
+      padding: 15px 20px;
       border-radius: 8px;
       margin: 10px;
     }
 
     /* 모바일 대응 */
-  @media (max-width: 768px) {
-    .content {
-      padding: 20px;
+    @media (max-width: 768px) {
+      .content {
+        padding: 20px;
+      }
+
+      .content h1 {
+        font-size: 22px;
+      }
+
+      .content p {
+        font-size: 18px;
+      }
+
+      input, button {
+        font-size: 16px;
+        padding: 12px 15px;
+      }
     }
 
-    .content h1 {
-      font-size: 22px; /* 모바일에서 제목 크기 */
+    @media (max-width: 480px) {
+      .content h1 {
+        font-size: 20px;
+      }
+
+      .content p {
+        font-size: 16px;
+      }
+
+      input, button {
+        font-size: 14px;
+        padding: 10px 12px;
+      }
     }
 
-    .content p {
-      font-size: 18px; /* 모바일에서 본문 크기 */
-    }
-
-    input, button {
-      font-size: 16px;
-      padding: 12px 15px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .content h1 {
-      font-size: 20px;
-    }
-
-    .content p {
-      font-size: 16px;
-    }
-
-    input, button {
-      font-size: 14px;
-      padding: 10px 12px;
-    }
-  }
-  
     img {
       width: 60%;
       max-width: 600px;
@@ -88,13 +111,20 @@
   </style>
 </head>
 <body>
+
+  <!-- 🔥 이제 iframe이 크게 보임 -->
   <iframe src="https://naver.me/xGFt9MX4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  <!-- 영상과 본문 사이 이미지 -->
+
   <img src="Milmap.jpg" alt="설명 이미지">
 
   <div class="content">
     <h1>지도</h1>
-    <p>아무래도 먼저 출발한 사람이 있는 것 같습니다.<br>지도와 단서를 조합해 보물을 찾아야 합니다.<br>우선 박경리 작가의 생가에서 시작하는 것이 좋겠습니다.<br>그곳으로 가서 두번째 단서카드를 열어보세요.</p>
+    <p>
+      아무래도 먼저 출발한 사람이 있는 것 같습니다.<br>
+      지도와 단서를 조합해 보물을 찾아야 합니다.<br>
+      우선 박경리 작가의 생가에서 시작하는 것이 좋겠습니다.<br>
+      그곳으로 가서 두번째 단서카드를 열어보세요.
+    </p>
   </div>
 </body>
 </html>
