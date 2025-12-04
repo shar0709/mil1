@@ -7,7 +7,7 @@
     body {
       margin: 0;
       height: 100vh;
-      background-image: url('tong02.png');
+      background-image: url('tong12.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -108,14 +108,14 @@
   </style>
 </head>
 <body>
-  <iframe src="https://naver.me/xdjl9D2r" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe src="https://naver.me/FXkmz9oY" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   <!-- 영상과 본문 사이 이미지 -->
-  <img src="tong6.png" alt="설명 이미지">
+  <img src="tong 51.png" alt="설명 이미지">
 
   <div class="content">
     <h1>단서5.길</h1>
-    <p>드디어 도착한 가로수길.여기에도 숫자가 있다고?<br>이번 단서에 대한 힌트는 시라고 하는데 시인이라도 살고있나?<br>그나저나 목이 마른데 시원한 아아라도 한잔 마실까?</p>
-    <input type="text" id="answer" placeholder="다섯번째 단서는 뭘까?">
+    <p>시가 쓰여져 있는곳을 찾았나요?<br>그렇다면 답을 알 수 있을것입니다.<br>시조시인이자 화가, 서예가이며 통영의 대표 예술가 중 한명인 이 사람은 누구일까요?</p>
+    <input type="text" id="answer" placeholder="이 사람의 이름은?">
     <button onclick="checkAnswer()">제출</button>
     <p id="result"></p>
   </div>
@@ -124,10 +124,10 @@
     function checkAnswer() {
       const answer = document.getElementById('answer').value.trim();
       if (answer === "1") {
-        document.getElementById('result').textContent = "정답입니다! 영상으로 이동합니다.";
+        document.getElementById('result').textContent = "정답입니다!";
         setTimeout(() => {
           // 정답이면 유튜브 영상 페이지로 이동
-          window.location.href = "https://www.youtube.com/embed/bPFmdF1_2aU?autoplay=1&mute=1";
+          window.location.href = "https://shar0709.github.io/mil1/tong51.html";
         }, 2000); // 2초 후 이동
       } else {
         document.getElementById('result').textContent = "틀렸습니다!";
